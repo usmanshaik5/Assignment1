@@ -42,7 +42,8 @@ The system will:
 - Display daily weather summaries, historical trends, and triggered alerts.
 
 ## Installation
-
+  npm install for frontend
+  node insatll for backend
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/weather-monitoring.git
