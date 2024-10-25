@@ -1,5 +1,8 @@
 Application 2: Real-Time Data Processing System for Weather Monitoring with Rollups and Aggregates project. This template covers the objective, installation, usage, and more:
 
+please install dependencies related to frontend and backend
+frontend:-npm install
+backend:-npm install axios,mysql2,npm install chartsjs 
 # Real-Time Data Processing System for Weather Monitoring
 
 ## Objective
@@ -44,6 +47,19 @@ The system will:
 ## Installation
   npm install for frontend
   node insatll for backend
+
+
+  git clone <your-github-repo-url>
+cd <your-repo-directory>
+
+npm install express body-parser cors mysql2
+
+npx create-react-app my-rule-engine-ui
+cd my-rule-engine-ui
+npm install axios react-router-dom
+node index.js
+npm start
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/weather-monitoring.git
@@ -109,7 +125,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Feel free to reach out if you need further modifications or additional sections!
 
 
-
+Using the Application
+Access the backend API on http://localhost:<backend-port>/api/rules to manage rules.
+Use the frontend at http://localhost:3000 to interact with the rule engine.
 
 
 
