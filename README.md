@@ -131,7 +131,65 @@ Use the frontend at http://localhost:3000 to interact with the rule engine.
 
 
 
+Prerequisites
+Ensure you have the following installed on your system:
 
+Node.js
+XAMPP (for MySQL) or Docker for containerization.
+Installation Instructions
+Clone the Repository: Clone your repository to your local machine.
+
+git clone <your-github-repo-url>
+cd <your-repo-directory>
+Install Backend Dependencies: Navigate to your backend directory (if applicable) and install the required packages.
+
+npm install express axios node-schedule mysql2
+Dependencies Explained:
+express: Web framework for Node.js to create server applications.
+axios: Promise-based HTTP client for making API requests.
+node-schedule: A cron-like library for scheduling tasks in Node.js.
+mysql2: MySQL client for Node.js.
+Setup the Database:
+
+Start XAMPP and launch the phpMyAdmin.
+Create a new database (e.g., weather_monitoring).
+Define the necessary schema for your daily weather summaries. Here’s an example SQL command:
+
+CREATE TABLE daily_weather_summary (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date DATE NOT NULL,
+  average_temperature DECIMAL(5, 2) NOT NULL,
+  max_temperature DECIMAL(5, 2) NOT NULL,
+  min_temperature DECIMAL(5, 2) NOT NULL,
+  dominant_weather_condition VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+Obtain OpenWeatherMap API Key:
+
+Sign up for a free account at OpenWeatherMap and obtain your API key. Store this key securely as it will be used to access weather data.
+Configure Environment Variables: Create a .env file in your project root directory and add your OpenWeatherMap API key:
+
+OPENWEATHER_API_KEY=<your_api_key>
+Run the Application: Start your backend server (assuming you have an index.js or server.js file):
+
+node index.js
+Using the Application
+The application will automatically call the OpenWeatherMap API at the specified interval (e.g., every 5 minutes) to retrieve weather data.
+Daily weather summaries will be stored in the database for further analysis.
+Test Cases
+System Setup: Verify that the system connects to the OpenWeatherMap API using a valid API key.
+
+Data Retrieval: Ensure that the system retrieves weather data for the specified locations and parses the response correctly.
+
+Temperature Conversion: Test the conversion of temperature values from Kelvin to Celsius (or Fahrenheit).
+
+Daily Weather Summary: Simulate a sequence of weather updates and verify that daily summaries are calculated correctly.
+
+Alerting Thresholds: Configure user thresholds and verify that alerts are triggered only when a threshold is violated.
+
+Bonus Considerations
+Extend the system to support additional weather parameters (e.g., humidity, wind speed).
+Implement functionalities for weather forecasts and summaries based on predicted conditions.
 
 
 
